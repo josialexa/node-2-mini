@@ -30,5 +30,17 @@ module.exports = {
             if(author) books[bookIndex].author = author;
             res.status(200).send(books);
         }
+    },
+
+    delete: (req, res) => {
+        let bookIndex = books.findIndex(v => v.id == req.params.id)
+        
+        if(bookIndex == -1) {
+            res.status(500).send('Book not found');
+        } else {
+            books.splice(bookIndex, 1);
+            res.status(200).send(books);
+        }
     }
+
 };
