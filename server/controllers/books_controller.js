@@ -9,9 +9,9 @@ module.exports = {
     create: (req, res) => {
         const {author, title} = req.body;
         const book = {
-            id,
-            author,
-            title
+            id: id,
+            author: author,
+            title: title
         };
 
         books.push(book);
