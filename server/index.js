@@ -6,6 +6,7 @@ app.use(express.json());
 
 app.get('/api/books', bc.read);
 app.post('/api/books', bc.create);
+app.put('/api/books/:id', bc.update);
 
 app.listen(4000, () => {
     console.log('Listening on port 4000');
